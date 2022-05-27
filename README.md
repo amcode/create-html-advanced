@@ -1,4 +1,4 @@
-# create-html
+# create-html-advanced
 
 Create the content of an html file with one function call.
 
@@ -19,7 +19,7 @@ Create the content of an html file with one function call.
 ## Install
 
 ```
-npm install --save create-html
+npm install --save create-html-advanced
 ```
 
 ## Usage
@@ -37,6 +37,8 @@ npm install --save create-html
 - `head`
 - `body`
 - `favicon`
+- 'nav'
+- 'footer'
 
 ## Examples
 
@@ -60,7 +62,9 @@ var html = createHTML({
   dir: 'rtl',
   head: '<meta name="description" content="example">',
   body: '<p>example</p>',
-  favicon: 'favicon.png'
+  favicon: 'favicon.png',
+  nav: '<div><a href="#">home</a></div>',
+  footer: <div>&copy; Copyright 2022</div>
 })
 ```
 
@@ -68,7 +72,7 @@ Create a file with the html contents using the fs module:
 
 ```js
 var fs = require('fs')
-var createHTML = require('create-html')
+var createHTML = require('create-html-advanced')
 
 var html = createHTML({
   title: 'example'
@@ -83,7 +87,7 @@ Create a stream by pairing this module with [`from2-string`](http://npmjs.com/fr
 
 ```js
 var fromString = require('from2-string')
-var createHTML = require('create-html')
+var createHTML = require('create-html-advanced')
 
 var html = createHTML({
   title: 'example'
@@ -129,13 +133,13 @@ var html = createHTML({
 
 This module comes with a simple command-line tool for creating html files.
 
-Install it globally with `npm i -g create-html`
+Install it globally with `npm i -g create-html-advanced`
 
 ### Usage:
 
 ```
 Usage:
-  create-html [options]
+  create-html-advanced [options]
 
 Options:
   --title, -t        Page title
@@ -154,11 +158,14 @@ Options:
 ### Example:
 
 ```
-create-html --title "an example html file"
+create-html-advanced --title "an example html file"
 ```
 
 ### See also
 - [simple-html-index](https://github.com/mattdesl/simple-html-index)
+
+### Originally forked and extended from
+- [simple-html-index](https://github.com/sethvincent/create-html)
 
 ## License
 [MIT](LICENSE.md)
