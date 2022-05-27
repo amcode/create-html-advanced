@@ -42,6 +42,7 @@ module.exports = function (opts) {
   var dir = opts.dir || 'ltr'
   var head = opts.head || ''
   var body = opts.body || ''
+  var footer = opts.footer || ''
 
   return `<!doctype html>
 <html lang="${lang}" dir="${dir}">
@@ -56,6 +57,9 @@ ${headScript}
 <body>
 ${body}
 ${bodyScript}
+<footer>
+${footer}
+</footer>
 </body>
 </html>
 `
